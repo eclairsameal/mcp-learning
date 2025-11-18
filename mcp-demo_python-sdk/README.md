@@ -70,3 +70,87 @@ python [mcp client python script]
 
     For English.
 
+## Results Explanation
+
+### Prompt:
+
+* The input format was intentionally made different for testing purposes.
+
+* It is defined in the code.
+
+```
+ prompts = [
+        "Please check the weather in Paris today.",
+        "Please calculate the value of 3*7+10.",
+        "What's the weather in Osaka?",
+        "Calculate 15/3+4."
+        ]
+```
+
+Run python script :
+
+```
+python mcp-demo_python-sdk/ollama_mcp_client_llm_en.py 
+```
+
+Results :  
+
+💬 LLM Prompt: **Input Prompt.**
+
+🛠 Tool Results: **The result returned by the tool.**
+
+🤖 LLM Reply: **LLM uses the results returned by the tool to generate a response.**
+
+```
+💬 LLM Prompt: Please check the weather in Paris today.
+Processing request of type CallToolRequest
+Processing request of type ListToolsRequest
+🛠 Tool Results: Paris: Overcast，temperature: 16°C
+🤖 LLM Reply: Here's a complete answer based on the given information:
+
+Current Weather Conditions in Paris:
+- The current weather in Paris is overcast.
+- The temperature is at 16°C.
+
+Let me know if you'd like to add anything else!
+
+💬 LLM Prompt: Please calculate the value of 3*7+10.
+Processing request of type CallToolRequest
+🛠 Tool Results: 3*7+10 = 31
+🤖 LLM Reply: Here's the complete solution to the problem:
+
+Problem: 3 * 7 + 10 = ?
+
+Solution:
+To solve this equation, we need to follow the order of operations (PEMDAS):
+1. Multiply 3 and 7: 3 * 7 = 21
+2. Add 10 to the result: 21 + 10 = 31
+
+Therefore, the final answer is:
+
+3 * 7 + 10 = 31
+
+💬 LLM Prompt: What's the weather in Osaka?
+Processing request of type CallToolRequest
+🛠 Tool Results: Osaka: Overcast，temperature: 16°C
+🤖 LLM Reply: Here is the organized information:
+
+Weather in Osaka:
+- Current weather condition: Overcast
+- Temperature: 16°C
+
+Let me know if you'd like to add anything else!
+
+💬 LLM Prompt: Calculate 15/3+4.
+Processing request of type CallToolRequest
+🛠 Tool Results: 15/3+4 = 9.0
+🤖 LLM Reply: Here's the completed answer:
+
+15 / 3 + 4 = ?
+
+First, divide 15 by 3: 15 ÷ 3 = 5
+
+Next, add 4 to the result: 5 + 4 = 9
+
+So, 15 / 3 + 4 = 9
+```
