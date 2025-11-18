@@ -24,9 +24,20 @@ pip install -r requirements.txt
 You must install ollama and enable the local connection port.
 
 ```
-ollama list
+>> ollama list
+
 NAME                                       ID              SIZE      MODIFIED          
-llama3.2:latest                            a80c4f17acd5    2.0 GB    4 months ago     
+llama3.2:latest                            a80c4f17acd5    2.0 GB    4 months ago 
+
+>> curl http://localhost:11434/api/chat -d '{
+  "model": "llama3.2:latest",
+  "messages": [
+    { "role": "user", "content": "What is 2+2?" }
+  ],
+  "stream": false
+}'
+
+{"model":"llama3.2:latest","created_at":"2025-11-18T06:40:37.446869Z","message":{"role":"assistant","content":"2 + 2 = 4."},"done":true,"done_reason":"stop","total_duration":4392920375,"load_duration":2960034209,"prompt_eval_count":32,"prompt_eval_duration":525777542,"eval_count":9,"eval_duration":904762166}%   
 ```
 
 The mcp server is executed when the client is executed.
